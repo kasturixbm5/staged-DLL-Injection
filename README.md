@@ -6,8 +6,9 @@ Staged DLL injection proof-of-concept built in C using Win32 APIs — developed 
 ## Overview
 
 A proof-of-concept implementation of staged DLL injection on Windows, built as part of red team certification studies. This project demonstrates how a stager can remotely load a malicious DLL into a target process using native Win32 APIs.
+Works best in an AD Environment that allows SMB traffic within the internal network, not recommended to work over internet
 
-##Usage
+## Usage
 
 ```c
 1. Build a shellcode with msfvenom
